@@ -22,8 +22,8 @@ public class RegistroCircuitos {
     FileReader fr;
     BufferedReader br;
 
-    public RegistroCircuitos(List<Circuito> ListaCircuitos) {
-        this.ListaCircuitos = ListaCircuitos;
+    public RegistroCircuitos() {
+        this.ListaCircuitos = new ArrayList<Circuito>();
         ruta="src/registros/";
         File archivo=null;
         FileReader fr=null;
@@ -152,18 +152,29 @@ public class RegistroCircuitos {
         }
     }
         //si hay ñectura de lineas añadimos a la lista de circuitos
+        int c;
+        String lin;
+        
         if(!lineas.isEmpty()){
             for(String a:lineas){
                 String[] atr;
                 Circuito circuito=new Circuito();
                 atr=a.split(";");
                 circuito.setNombre(atr[0]);
-                
-                /*circuito.setUbicacion(atr[1]);
-                circuito.setLongitud(atr[2]);
-                circuito.setNvueltas(atr[3]);
-                circuito.setDistancia(atr[4]);
-                circuito.setRecordvuelta(atr[5]);*/
+                circuito.setIdcircuito(atr[1]);
+                circuito.setUbicacion(atr[2]);
+                lin=atr[3];
+               c=Integer.parseInt(lin);
+               circuito.setLongitud(c);
+               lin=atr[4];
+               c=Integer.parseInt(lin);
+               circuito.setNvueltas(c);
+               lin=atr[5];
+               c=Integer.parseInt(lin);
+               circuito.setDistancia(c);
+               lin=atr[6];
+               c=Integer.parseInt(lin);
+                circuito.setRecordvuelta(c);
                                 
                 cir.add(circuito);
             }
@@ -176,6 +187,7 @@ public class RegistroCircuitos {
     }
 
     public void guardarCircuito(Circuito cir){
+        this.ListaCircuitos.add(cir);
         String grabar="";
         grabar+=cir.getIdcircuito()+";";
         grabar+=cir.getNombre()+";";

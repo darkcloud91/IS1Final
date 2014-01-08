@@ -89,6 +89,7 @@ public class pruebaMain {
         f1.cargarDatosPilotos();
         f1.cargarDatosGrandesPremios();
         f1.cargarDatosCM();
+        f1.cargarDatosCircuitos();
         //f1.cargarDatosCircuitos();
         
         

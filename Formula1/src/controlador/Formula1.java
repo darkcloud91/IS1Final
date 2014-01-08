@@ -47,6 +47,7 @@ public class Formula1 {
         registroDatosPilotos=new RegistroPilotos();
         registroDatosCampeonatoMundial=new RegistroCampeonatoMundial(); 
         registroDatosGranPremio=new RegistroGranPremio();
+        this.registroDatosCircuitos=new RegistroCircuitos();
         //this.inicalizaCM();
     }
     
@@ -235,6 +236,10 @@ public class Formula1 {
     
     public void cargarDatosEscuderias(){
         this.registroDatosEscuderias.cargarEscuderias();
+    }
+    
+    public void cargarDatosCircuitos(){
+        this.registroDatosCircuitos.cargarCircuitos();
     }
      public Circuito introduceIdCircuito(String idcircuito){
         Circuito cir=this.registroDatosCircuitos.introduceIdcircuito(idcircuito);
